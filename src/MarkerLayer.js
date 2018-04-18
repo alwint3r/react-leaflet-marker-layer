@@ -10,6 +10,7 @@ import filter from 'lodash.filter';
 import L from 'leaflet';
 import { MapLayer } from 'react-leaflet';
 import shouldPureComponentUpdate from 'react-pure-render/function';
+import PropTypes from 'prop-types';
 
 export type LngLat = {
   lng: number;
@@ -51,13 +52,13 @@ function shouldIgnoreLocation(loc: LngLat): boolean {
 
 export default class MarkerLayer extends MapLayer {
   static propTypes = {
-    markers: React.PropTypes.array,
-    longitudeExtractor: React.PropTypes.func.isRequired,
-    latitudeExtractor: React.PropTypes.func.isRequired,
-    markerComponent: React.PropTypes.func.isRequired,
-    propsForMarkers: React.PropTypes.object,
-    fitBoundsOnLoad: React.PropTypes.bool,
-    fitBoundsOnUpdate: React.PropTypes.bool,
+    markers: PropTypes.array,
+    longitudeExtractor: PropTypes.func.isRequired,
+    latitudeExtractor: PropTypes.func.isRequired,
+    markerComponent: PropTypes.func.isRequired,
+    propsForMarkers: PropTypes.object,
+    fitBoundsOnLoad: PropTypes.bool,
+    fitBoundsOnUpdate: PropTypes.bool,
   };
 
   shouldComponentUpdate = shouldPureComponentUpdate;
