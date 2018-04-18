@@ -61,6 +61,8 @@ export default class MarkerLayer extends MapLayer {
     fitBoundsOnUpdate: PropTypes.bool,
   };
 
+  createLeafletElement = () => {}
+
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   componentWillReceiveProps() {
